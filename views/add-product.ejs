@@ -1,0 +1,71 @@
+<%- include('includes/head.ejs') %>
+    <link rel="stylesheet" href="/css/forms.css">
+</head>
+
+<body>
+   <%- include('includes/navbar.ejs') %>
+   <div class="container">
+    <div class="wrapper">
+        <h3>Post Your Add</h3>
+      <form action="/post" method="POST" enctype="multipart/form-data">
+        <div class="form-group form-element">
+          <label for="formGroupExampleInput">Product</label>
+          <input type="text" class="form-control" id="formGroupExampleInput" name="name" placeholder="Product Name" >
+        </div>
+        <div class="form-group form-element">
+          <label for="formGroupExampleInput">Image</label>
+          <input type="file" class="form-control" id="formGroupExampleInput" name="image" accept="image/*" placeholder="Image" multiple>
+        </div>
+        <label for="formGroupCategoryInput">Category</label>
+        <select id="formGroupCategoryInput" class="form-control form-element form-separate" name="category">
+          <option value="">Pick a Category</option>
+          <option value="electronics">Electronics</option>
+          <option value="accessory">Accessories</option>
+          <option value="books">Book/Novel</option>
+          <option value="hobbies">Hobby Related</option>
+          <option value="sports">Sports</option>
+          <option value="other">Other</option>
+        </select>
+        <label for="formGroupConditionInput">Condition</label>
+        <select id="formGroupConditionInput" class="form-control form-element form-separate" name="condition" >
+          <option value="">Condition</option>
+          <option value="Almost Like New">Almost Like New</option>
+          <option value="Gently Used">Gently Used</option>
+          <option value="Heavily Used">Heavily Used</option>
+          <option value="Needs Service">Needs Service</option>
+
+        </select>
+        <div class="form-element form-separate">
+          <label class="sr-only" for="inlineFormInputGroup">Price</label>
+          <div class="input-group mb-2">
+            <div class="input-group-prepend">
+              <div class="input-group-text">₹</div>
+            </div>
+            <input type="number" class="form-control" id="inlineFormInputGroup" name="price" placeholder="Price" >
+          </div>
+        </div>
+        <div class="form-group form-element">
+          <label for="exampleFormControlTextarea1">Description</label>
+          <textarea class="form-control" id="exampleFormControlTextarea1" name="description" rows="4" ></textarea>
+        </div>
+        <div class="custom-control custom-switch form-separate">
+          <input type="checkbox" class="custom-control-input" id="customSwitch1">
+          <label class="custom-control-label" for="customSwitch1">Show my phone number on my ads </label>
+        </div>
+        <button type="submit" class="btn btn-success">Add Product</button>
+      </form>
+    </div>  
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script>
+    $(function(){
+       $("button[type = 'submit']").click(function(e){
+          var $fileUpload = $("input[type='file']");
+          if (parseInt($fileUpload.get(0).files.length) > 5){
+             alert("You are only allowed to upload a maximum of 5 files");
+             e.preventDefault();
+          }
+       });
+    });
+ </script>
+<%- include('includes/end.ejs') %>

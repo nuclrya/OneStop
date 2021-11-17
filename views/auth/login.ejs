@@ -1,0 +1,32 @@
+<%- include('../includes/head.ejs') %>
+    <link rel="stylesheet" href="/css/auth/form.css">
+</head>
+
+<body>
+    <%- include('../includes/navbar.ejs') %>
+    
+        <div id="newsletter_panel"  class="newsletter_panel_login">
+            <div class="form-background">
+                <h1 class="active">Account Login</h1>
+                <div class="container">
+                    <form action="/login" class="login-form" method="POST">
+                        <div class="txtb">
+                            <label for="email"> Email</label>
+                            <input class="input100" name="email" type="text" required>
+                            <span class="focus-input100"></span>
+                        </div>                        
+                        <div class="txtb">
+                            <label>Password</label>
+                            <input class="input100" name="password" type="password" required>
+                            <span class="focus-input100" style="margin-top: 135px;"></span>
+                        </div>
+                        <input type="submit" class="logbtn" value="Login">
+                        <div class="bottom-text">
+                            <a class="fpswd" href="/resetpass">Forgot Password?</a>
+                            <p style="display: inline;">Don't have an account?</p><a class="sgnup" style="color: #57b846;" href="/signup">Sign Up</a>
+                        </div>      
+                    </form>           
+                </div>
+            </div>
+        </div>
+ <%- include('../includes/end.ejs') %>
