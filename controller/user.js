@@ -2,6 +2,7 @@ const User = require('../models/user');
 const bcrypt = require('bcryptjs');
 const sgMail = require('@sendgrid/mail');
 const crypto = require('crypto');
+require('dotenv').config()
 sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 
 exports.getUserLogin = (req, res) => {

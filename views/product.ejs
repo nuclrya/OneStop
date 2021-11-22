@@ -54,7 +54,7 @@
                 <figure class="avatar"></figure>
                 <a href= "/profile/<%= product.userId._id %>" >
                     <img src="/images/avatar.png">
-                    <span><%= product.userId.name %></span>
+                    <span><%= product.userId.name.split(" ").splice(0,1).join(" ") %></span>
                 </a>
             </div>
             

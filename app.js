@@ -35,7 +35,7 @@ app.set('views','views');
 app.use(upload.array('image'))
 app.use(bodyParser.urlencoded({extended:false}));
 app.use(express.static(path.join(__dirname,'public')));
-app.use(session({secret:process.env.MONGODB_SECRET, resave: false, saveUninitialized: false, store: store}));
+app.use(session({secret:'this_must_be_a_very_long_string', resave: false, saveUninitialized: false, store: store}));
 
 app.use(flash());
 

@@ -17,8 +17,14 @@
                     </div>
                     <div class="txtb">
                         <label>Email</label>
-                        <input class="input100" name="email" type="text">
-                        <span class="focus-input100" style="margin-top: 135px;"></span>
+                        <input class="input100" id="email_input" name="email" type="text">
+                        <!-- <span class="focus-input100" style="margin-top: 135px;"></span> -->
+                        <h5 style="display: inline-block;">@</h5>
+                        <select name="mailaddr" id="dropdown" style="width: 20%;margin: 0; display: inline-block;font-size: 1rem;">
+                            <option value="iiita.ac.in">iiita.ac.in</option>
+                            <option value="mnnit.ac.in">mnnit.ac.in</option>\
+                            <option value="iitk.ac.in">iitk.ac.in</option>
+                        </select>
                     </div>                        
                     <div class="txtb">
                         <label>Password</label>
@@ -32,8 +38,11 @@
                     </div>
                     <div class="txtb">
                         <label>College</label>
-                        <input class="input100" name="college" type="text">
-                        <span class="focus-input100" style="margin-top: 135px;"></span>
+                        <select name="college" id="dropdown">
+                            <option value="IIITA">IIITA</option>
+                            <option value="MNNIT">MNNIT</option>\
+                            <option value="IITK">IITK</option>
+                        </select>
                     </div>
                     <div class="txtb">
                         <label>City</label>
