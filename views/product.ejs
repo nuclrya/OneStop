@@ -57,8 +57,11 @@
                     <span><%= product.userId.name.split(" ").splice(0,1).join(" ") %></span>
                 </a>
             </div>
-            
-            <button class="link-to-chat">CHAT WITH SELLER</button>
+            <% if(isLoggedIn){ %>
+            <button class="link-to-chat" onclick="location.href='https://chat-shop-saga.herokuapp.com/?username=<%= product.userId.name %>&room=<%= product._id %>&product=<%= product.name %>'">CHAT WITH SELLER</button>
+            <% } else{%>
+            <button class="link-to-chat" onclick="">CHAT WITH SELLER</button>
+            <% } %>
             <div class="contact-details">
               
               <% if(isLoggedIn && product.number_visible){ %>
