@@ -71,7 +71,7 @@ exports.getUserSignup = (req, res) => {
 
 
 exports.postUserSignup = (req, res) => {
-    const email = req.body.email;
+    const email = req.body.email + '@' + req.body.mailaddr;
     const password = req.body.password;
     User.findOne({email: email})
         .then(userDoc => {

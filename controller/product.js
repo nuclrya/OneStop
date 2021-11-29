@@ -140,6 +140,10 @@ exports.postAddProduct = async (req, res) => {
     const category = req.body.category;
     const condition = req.body.condition;
     const image_url = urls;
+    let number_visible = false;
+    if (req.body.visiblilty){
+        number_visible = true;
+    }
     const date_posted = new Date();
     const product = new Product({
         name: name,
@@ -150,7 +154,8 @@ exports.postAddProduct = async (req, res) => {
         condition: condition,
         category: category,
         image_url: image_url,
-        date_posted: date_posted
+        date_posted: date_posted,
+        number_visible: number_visible
     });     
     product.save()
         .then(result => {

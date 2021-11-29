@@ -60,10 +60,14 @@
             
             <button class="link-to-chat">CHAT WITH SELLER</button>
             <div class="contact-details">
+              
+              <% if(isLoggedIn && product.number_visible){ %>
+                <span class="phone"> <i class="fa fa-phone" aria-hidden="true"></i> <%=product.userId.phone %> </span>
+              <% } else{ %>  
                 <span class="phone">** ***** ***<a href="#">Show number</a></span>
-                <!-- <a href="#">Show number</a> -->
+              <% } %>
                 <br>
-                <span class="email"><%= product.userId.email %></span>
+                <span class="email"> <i class="fa fa-envelope" aria-hidden="true"></i> <%= product.userId.email %></span>
                 
             </div>
             <div class="seller-info">

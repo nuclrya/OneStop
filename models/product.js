@@ -39,6 +39,11 @@ const productSchema = new Schema( {
     date_posted: {
         type: Date,
         required: true 
+    },
+    number_visible: {
+        type: Boolean,
+        required: true,
+        default: true
     }
 });
 
